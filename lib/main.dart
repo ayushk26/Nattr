@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'chatPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,6 +41,7 @@ class _BasePageState extends State<BasePage> {
       ),
       body: Column(
         children: [
+          //One Contact
           InkWell(
             child: Container(
               child: Row(
@@ -70,8 +72,14 @@ class _BasePageState extends State<BasePage> {
               padding: new EdgeInsets.fromLTRB(0, 0.0, 5.0, 1.0),
               color: Colors.white10,
             ) ,
-            onTap:() {print("Pressed");},
+            onTap:() {
+              print("Pressed");
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ChatPage(username: "Andrew Walker"))
+              );
+            },
           )
+          // end of one contact
         ],
       ),
     );
